@@ -1,4 +1,4 @@
-[B]Version 2.0.1 - 2011-09-XX[/B]
+[B]Version 2.0.1 - 2011-09-20[/B]
 - Added DR HD
 - New graphics
 
