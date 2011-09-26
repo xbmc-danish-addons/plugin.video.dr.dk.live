@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
-	<string id="30001">This channel is not available in %s quality.</string>
-    <string id="30002">Change the quality setting and try again.</string>
     <string id="30100">General</string>
     <string id="30101">Quality</string>
+
+    <string id="30110">Best (up to 1700 kpbs)</string>
+    <string id="30111">High (up to 1000 kpbs)</string>
+    <string id="30112">Medium (up to 500 kpbs)</string>
+    <string id="30113">Low (up to 250 kpbs)</string>
 </strings>
