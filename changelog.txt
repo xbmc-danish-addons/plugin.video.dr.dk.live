@@ -1,6 +1,7 @@
-[B]Version 2.0.4 - 2011-11-xx[/B]
+[B]Version 2.0.4 - 2011-12-04[/B]
 - Added more of the TV2/Regions channels and Folketinget TV
-- Added option to group channels
+- Added setting to group channels
+- Fix playback of channels from XBMC favourites
 
 [B]Version 2.0.3 - 2011-10-03[/B]
 - Fixed problem with old settings
