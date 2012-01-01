@@ -2,7 +2,6 @@ import sys
 import os
 import cgi as urlparse
 
-import xbmc
 import xbmcaddon
 import xbmcgui
 import xbmcplugin
@@ -56,23 +55,27 @@ class DanishLiveTV(object):
         xbmcplugin.endOfDirectory(HANDLE)
 
 
-    def playChannel(self, name):
+    def playChannel(self, id):
         try:
             quality = QUALITIES[int(ADDON.getSetting('quality'))]
         except ValueError:
             quality = QUALITIES[0] # fallback for old settings value
 
         for channel in CHANNELS:
-            if channel.get_name() == name:
+            if str(channel.get_id()) == id:
                 url = channel.get_url(quality)
                 if url:
-                    icon = os.path.join(ADDON.getAddonInfo('path'), 'resources', 'logos', channel.get_logo())
-                    item = xbmcgui.ListItem(channel.get_name(), iconImage=icon, thumbnailImage=icon)
+                    icon = os.path.join(ADDON.getAddonInfo('path'), 'resources', 'logos', '%d.png' % channel.get_id())
+                    if not os.path.exists(icon):
+                        icon = ICON
+
+                    title = ADDON.getLocalizedString(TITLE_OFFSET + channel.get_id())
+                    item = xbmcgui.ListItem(title, iconImage=icon, thumbnailImage=icon, path=url)
                     item.setProperty('Fanart_Image', FANART)
                     item.setProperty('IsLive', 'true')
 
-                    p = xbmc.Player()
-                    p.play(url, item)
+                    xbmcplugin.setResolvedUrl(HANDLE, True, item)
+                    break
 
 
 if __name__ == '__main__':
