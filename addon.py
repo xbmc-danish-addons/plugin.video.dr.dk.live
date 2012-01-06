@@ -1,10 +1,31 @@
+#
+#      Copyright (C) 2012 Tommy Winther
+#      http://tommy.winther.nu
+#
+#  This Program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2, or (at your option)
+#  any later version.
+#
+#  This Program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this Program; see the file LICENSE.txt.  If not, write to
+#  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+#  http://www.gnu.org/copyleft/gpl.html
+#
 import sys
 import os
-import cgi as urlparse
+import urlparse
 
 import xbmcaddon
 import xbmcgui
 import xbmcplugin
+
+import buggalo
 
 from channels import CHANNELS, CATEGORIES, QUALITIES
 
@@ -28,11 +49,15 @@ class DanishLiveTV(object):
             if not os.path.exists(icon):
                 icon = ICON
 
-            url = channel.get_url(quality)
+            idx = None
+            if channel.get_config_key():
+                idx = int(ADDON.getSetting(channel.get_config_key()))
+
+            url = channel.get_url(quality, idx)
             if url:
                 title = ADDON.getLocalizedString(TITLE_OFFSET + channel.get_id())
                 description = ADDON.getLocalizedString(DESCRIPTION_OFFSET + channel.get_id())
-                item = xbmcgui.ListItem(title, iconImage=icon, thumbnailImage=icon)
+                item = xbmcgui.ListItem(url, iconImage=icon, thumbnailImage=icon)
                 item.setInfo('video', infoLabels={
                     'title': title,
                     'plot' : description,
@@ -53,7 +78,6 @@ class DanishLiveTV(object):
             xbmcplugin.addDirectoryItem(HANDLE, url, item, isFolder = True)
 
         xbmcplugin.endOfDirectory(HANDLE)
-
 
     def playChannel(self, id):
         try:
@@ -87,14 +111,16 @@ if __name__ == '__main__':
     FANART = os.path.join(ADDON.getAddonInfo('path'), 'fanart.jpg')
     ICON = os.path.join(ADDON.getAddonInfo('path'), 'icon.png')
 
-    danishTV = DanishLiveTV()
-    if PARAMS.has_key('playChannel'):
-        danishTV.playChannel(PARAMS['playChannel'][0])
-    elif PARAMS.has_key('category'):
-        danishTV.showChannels(int(PARAMS['category'][0]))
-    elif ADDON.getSetting('group.by.category') == 'true':
-        danishTV.showCategories()
-    else:
-        danishTV.showChannels()
-
+    try:
+        danishTV = DanishLiveTV()
+        if PARAMS.has_key('playChannel'):
+            danishTV.playChannel(PARAMS['playChannel'][0])
+        elif PARAMS.has_key('category'):
+            danishTV.showChannels(int(PARAMS['category'][0]))
+        elif ADDON.getSetting('group.by.category') == 'true':
+            danishTV.showCategories()
+        else:
+            danishTV.showChannels()
+    except Exception:
+        buggalo.onExceptionRaised()
 
