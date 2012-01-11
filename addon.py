@@ -57,7 +57,7 @@ class DanishLiveTV(object):
             if url:
                 title = ADDON.getLocalizedString(TITLE_OFFSET + channel.get_id())
                 description = ADDON.getLocalizedString(DESCRIPTION_OFFSET + channel.get_id())
-                item = xbmcgui.ListItem(url, iconImage=icon, thumbnailImage=icon)
+                item = xbmcgui.ListItem(title, iconImage=icon, thumbnailImage=icon)
                 item.setInfo('video', infoLabels={
                     'title': title,
                     'plot' : description,

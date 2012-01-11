@@ -110,41 +110,43 @@ Channel(6, CATEGORY_DR, "drhd.stream").add_urls(
 
 # TV2 Fyn
 Channel(100, CATEGORY_TV2_REG).add_urls(
-    high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2fyn_1000 live=1')
+    high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2fyn_1000 live=1'
+)
 # TV2 Lorry
 Channel(101, CATEGORY_TV2_REG).add_urls(
     best   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2lorry_2000 live=1',
     high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2lorry_1000 live=1',
-    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2lorry_300 live=1')
-# Lorry+
+    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2lorry_300 live=1'
+)
+# TV2 Syd
 Channel(102, CATEGORY_TV2_REG).add_urls(
-    best   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2lorry-plus_2000 live=1',
-    high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2lorry-plus_1000 live=1',
-    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2lorry-plus_300 live=1')
+    best   = 'rtmp://80.63.11.91:1935/live/_definst_/tvsyd_2000 live=1',
+    high   = 'rtmp://80.63.11.91:1935/live/_definst_/tvsyd_1000 live=1',
+    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tvsyd_300 live=1'
+)
 # TV2 Midtvest
-Channel(103, CATEGORY_TV2_REG).add_urls(
-    high   = 'http://ms1.tvmidtvest.dk/frokosttv')
+#Channel(103, CATEGORY_TV2_REG).add_urls(
+#    high   = 'http://ms1.tvmidtvest.dk/frokosttv')
 # TV2 Nord
-Channel(104, CATEGORY_TV2_REG).add_urls(
-    best   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord_2000 live=1',
-    high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord_1000 live=1',
-    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord_300 live=1')
-# TV2 NordPlus
 Channel(105, CATEGORY_TV2_REG).add_urls(
     best   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord-plus_2000 live=1',
     high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord-plus_1000 live=1',
-    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord-plus_300 live=1')
+    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord-plus_300 live=1'
+)
 # TV2 East
 Channel(106, CATEGORY_TV2_REG).add_urls(
-    high   = 'rtmp://tv2regup1.webhotel.net/videostreaming/ playpath=tv2east live=1')
-# Kanal east
-Channel(107, CATEGORY_TV2_REG).add_urls(
-    high   = 'rtmp://tv2regup1.webhotel.net/videostreaming/ playpath=kanaleast live=1')
+    best   = 'rtmp://tv2regup1.webhotel.net/videostreaming/ playpath=tv2east live=1'
+)
 # TV2 OJ
-Channel(108, CATEGORY_TV2_REG).add_urls(
-    best   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2oj_2000 live=1',
-    high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2oj_1000 live=1',
-    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2oj_300 live=1')
+#Channel(108, CATEGORY_TV2_REG).add_urls(
+#    best   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2oj_2000 live=1',
+#    high   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2oj_1000 live=1',
+#    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2oj_300 live=1'
+# )
+# TV2 Bornholm
+#Channel(109, CATEGORY_TV2_REG).add_urls(
+#    best   = 'mms://itv02.digizuite.dk/tv2b'
+#)
 
 # http://www.24nordjyske.dk/webtv_high.asp
 # 24 Nordjyske
