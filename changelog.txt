@@ -1,7 +1,8 @@
 [B]Version 2.1.0 - 2012-01-xx[/B]
-- Updated TV2/Regionerne with the channels after January, 11th
+- Updated TV2/Regionerne with the changes after January, 11th
 - Added danskespil.dk Lotto
 - Added secondary streams for DRs channel
+- Show warning if not in Denmark
 
 [B]Version 2.0.4 - 2011-12-04[/B]
 - Added more of the TV2/Regions channels and Folketinget TV

@@ -20,6 +20,7 @@
 import sys
 import os
 import urlparse
+import urllib2
 
 import xbmcaddon
 import xbmcgui
@@ -101,6 +102,27 @@ class DanishLiveTV(object):
                     xbmcplugin.setResolvedUrl(HANDLE, True, item)
                     break
 
+    def imInDenmark(self):
+        try:
+            u = urllib2.urlopen('http://www.dr.dk/nu/api/estoyendinamarca.json')
+            response = u.read()
+            u.close()
+
+            imInDenmark = 'true' == response
+        except urllib2.URLError:
+            # If an error occurred assume we are not in Denmark
+            imInDenmark = False
+
+        if not imInDenmark and ADDON.getSetting('warn.if.not.in.denmark') == 'true':
+            heading = ADDON.getLocalizedString(99970)
+            line1 = ADDON.getLocalizedString(99971)
+            line2 = ADDON.getLocalizedString(99972)
+            line3 = ADDON.getLocalizedString(99973)
+            nolabel = ADDON.getLocalizedString(99974)
+            yeslabel = ADDON.getLocalizedString(99975)
+            if xbmcgui.Dialog().yesno(heading, line1, line2, line3, nolabel, yeslabel):
+                ADDON.setSetting('warn.if.not.in.denmark', 'false')
+
 
 if __name__ == '__main__':
     ADDON = xbmcaddon.Addon(id='plugin.video.dr.dk.live')
@@ -118,8 +140,10 @@ if __name__ == '__main__':
         elif PARAMS.has_key('category'):
             danishTV.showChannels(int(PARAMS['category'][0]))
         elif ADDON.getSetting('group.by.category') == 'true':
+            danishTV.imInDenmark()
             danishTV.showCategories()
         else:
+            danishTV.imInDenmark()
             danishTV.showChannels()
     except Exception:
         buggalo.onExceptionRaised()

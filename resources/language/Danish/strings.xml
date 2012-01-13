@@ -8,6 +8,8 @@
     <string id="30105">så prøv at skifte til den sekundære stream eller omvendt.</string>
     <string id="30106">Primær stream</string>
     <string id="30107">Sekundær stream</string>
+    <string id="30108">Advarsler</string>
+    <string id="30109">Advar hvis ikke i Danmark</string>
 
     <string id="30110">Bedste (op til 2 mbit/s)</string>
     <string id="30111">Høj (1 mbit/s)</string>
@@ -53,6 +55,13 @@
     <string id="32108">Se alle TV 2 | ØSTJYLLANDs nyhedsudsendelser kl. 16.05, 18.10, 19.30 og 22.22</string>
 
     <string id="32200">24NORDJYSKE giver dig væsentlige og gode historier fra Nordjylland. Du kan tænde, når det passer dig og få vigtige nyheder, gode oplevelser og serviceinformationer.[CR][CR]Hvert kvarter i morgen- og dagtimer og hvert tyvende minut begynder nyhedssløjfen -og kører dermed i ring. Nyhedssløjfen opdateres hver gang der sker noget nyt i Nordjylland.</string>
+
+    <string id="99970">Advarsel!</string>
+    <string id="99971">Det ser ud til du ikke befinder dig i Danmark.</string>
+    <string id="99972">En eller flere kanaler vil måske ikke kunne afspilles</string>
+    <string id="99973">eller der kan opstå andre uventede fejl.</string>
+    <string id="99974">OK</string>
+    <string id="99975">Vis ikke igen</string>
 
     <string id="99980">Game over, man! [I]Game over![/I]</string>
     <string id="99981">You can't handle the truth!</string>
