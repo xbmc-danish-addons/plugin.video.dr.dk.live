@@ -105,8 +105,8 @@ Channel(5, CATEGORY_DR, "drramasjang.stream").add_urls(
 # DR HD
 Channel(6, CATEGORY_DR, "drhd.stream").add_urls(
     best   = ['rtmp://livetv.gss.dr.dk/live/livedr06astream3 live=1', 'rtmp://livetv.gss.dr.dk/live/livedr06bstream3 live=1'],
-    medium = ['rtmp://livetv.gss.dr.dk/live/livedr06astream2 live=1', 'rtmp://livetv.gss.dr.dk/live/livedr06bstream2 live=1'],
-    low    = ['rtmp://livetv.gss.dr.dk/live/livedr06astream1 live=1', 'rtmp://livetv.gss.dr.dk/live/livedr06bstream1 live=1'])
+    high = ['rtmp://livetv.gss.dr.dk/live/livedr06astream2 live=1', 'rtmp://livetv.gss.dr.dk/live/livedr06bstream2 live=1'],
+    medium    = ['rtmp://livetv.gss.dr.dk/live/livedr06astream1 live=1', 'rtmp://livetv.gss.dr.dk/live/livedr06bstream1 live=1'])
 
 # TV2 Fyn
 Channel(100, CATEGORY_TV2_REG).add_urls(
