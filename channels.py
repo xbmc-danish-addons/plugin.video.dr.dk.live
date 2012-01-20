@@ -125,8 +125,8 @@ Channel(102, CATEGORY_TV2_REG).add_urls(
     medium = 'rtmp://80.63.11.91:1935/live/_definst_/tvsyd_300 live=1'
 )
 # TV2 Midtvest
-#Channel(103, CATEGORY_TV2_REG).add_urls(
-#    high   = 'http://ms1.tvmidtvest.dk/frokosttv')
+Channel(103, CATEGORY_TV2_REG).add_urls(
+    high   = 'http://ms1.tvmidtvest.dk/live')
 # TV2 Nord
 Channel(105, CATEGORY_TV2_REG).add_urls(
     best   = 'rtmp://80.63.11.91:1935/live/_definst_/tv2nord-plus_2000 live=1',
