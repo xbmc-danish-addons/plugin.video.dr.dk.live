@@ -144,9 +144,9 @@ Channel(106, CATEGORY_TV2_REG).add_urls(
 #    medium = 'rtmp://80.63.11.91:1935/live/_definst_/tv2oj_300 live=1'
 # )
 # TV2 Bornholm
-#Channel(109, CATEGORY_TV2_REG).add_urls(
-#    best   = 'mms://itv02.digizuite.dk/tv2b'
-#)
+Channel(109, CATEGORY_TV2_REG).add_urls(
+    best   = 'mms://itv02.digizuite.dk/tv2b'
+)
 
 # http://www.24nordjyske.dk/webtv_high.asp
 # 24 Nordjyske
