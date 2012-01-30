@@ -1,4 +1,4 @@
-[B]Version 2.1.1 - 2011-xx-xx[/B]
+[B]Version 2.1.1 - 2011-01-30[/B]
 - Fixed DR HD high-quality stream
 - Added TV2/Bornholm and TV/MIDT-VEST
 
