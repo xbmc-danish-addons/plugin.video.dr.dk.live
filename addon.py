@@ -51,7 +51,10 @@ class DanishLiveTV(object):
 
             idx = None
             if channel.get_config_key():
-                idx = int(ADDON.getSetting(channel.get_config_key()))
+                try:
+                    idx = int(ADDON.getSetting(channel.get_config_key()))
+                except ValueError:
+                    idx = 0 # fallback for corrupt(?) settings
 
             url = channel.get_url(quality, idx)
             if url:
