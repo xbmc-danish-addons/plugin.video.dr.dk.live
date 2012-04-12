@@ -156,3 +156,7 @@ Channel(201, CATEGORY_MISC).add_urls(
 Channel(202, CATEGORY_MISC).add_urls(
     best   = 'rtmp://lvs.wowza.jay.net/webstream/lotto live=1'
 )
+# kanalsport.dk
+Channel(203, CATEGORY_MISC).add_urls(
+    best   = 'http://lswb-de-08.servers.octoshape.net:1935/live/kanalsport/500k/playlist.m3u8'
+)
