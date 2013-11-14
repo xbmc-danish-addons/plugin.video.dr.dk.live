@@ -163,9 +163,9 @@ Channel(106, CATEGORY_TV2_REG).add_urls(
 )
 # TV2 OJ
 TV2RChannel(108, CATEGORY_TV2_REG).add_urls(
-    best   = 'rtmp://<HOST>:1935/live/_definst_/tv2oj_2000 live=1',
-    high   = 'rtmp://<HOST>:1935/live/_definst_/tv2oj_1000 live=1',
-    medium = 'rtmp://<HOST>:1935/live/_definst_/tv2oj_300 live=1'
+    best   = 'rtmp://<HOST>:1935/live/_definst_/tv2oj-plus_2000 live=1',
+    high   = 'rtmp://<HOST>:1935/live/_definst_/tv2oj_plus_1000 live=1',
+    medium = 'rtmp://<HOST>:1935/live/_definst_/tv2oj_plus_300 live=1'
 )
 # TV2 Bornholm
 Channel(109, CATEGORY_TV2_REG).add_urls(
