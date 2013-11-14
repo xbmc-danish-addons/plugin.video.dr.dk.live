@@ -132,7 +132,9 @@ Channel(5, CATEGORY_DR, "drramasjang.stream").add_urls(
 
 # TV2 Fyn
 TV2RChannel(100, CATEGORY_TV2_REG).add_urls(
-    high   = 'rtmp://<HOST>:1935/live/_definst_/tv2fyn_1000 live=1'
+    best   = 'rtmp://<HOST>:1935/live/_definst_/tv2fyn_2000 live=1',
+    high   = 'rtmp://<HOST>:1935/live/_definst_/tv2fyn_1000 live=1',
+    medium = 'rtmp://<HOST>:1935/live/_definst_/tv2fyn_300 live=1'
 )
 # TV2 Lorry
 TV2RChannel(101, CATEGORY_TV2_REG).add_urls(
