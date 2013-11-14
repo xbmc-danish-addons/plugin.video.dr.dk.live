@@ -90,7 +90,7 @@ class TV2RChannel(Channel):
     def get_host_ip(self):
         for attempt in range(0, 2):
             try:
-                u = urllib2.urlopen('http://livestream.fynskemedier.dk/loadbalancer')
+                u = urllib2.urlopen('http://livestream2.fynskemedier.dk/loadbalancer')
                 s = u.read()
                 u.close()
                 return s[9:]
