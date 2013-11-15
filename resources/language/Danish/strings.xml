@@ -10,11 +10,12 @@
     <string id="30107">Sekundær stream</string>
     <string id="30108">Advarsler</string>
     <string id="30109">Advar hvis ikke i Danmark</string>
+    <string id="30110">Vis kun Raspberry Pi kompatible streams</string>
 
-    <string id="30110">Bedste (op til 2 mbit/s)</string>
-    <string id="30111">Høj (1 mbit/s)</string>
-    <string id="30112">Medium (500 kbit/s)</string>
-    <string id="30113">Lav (250 kbit/s)</string>
+    <string id="30150">Bedste (op til 2 mbit/s)</string>
+    <string id="30151">Høj (1 mbit/s)</string>
+    <string id="30152">Medium (500 kbit/s)</string>
+    <string id="30153">Lav (250 kbit/s)</string>
 
     <string id="30201">Danmarks Radio</string>
     <string id="30202">TV2/Regionerne</string>

@@ -1,3 +1,7 @@
+[B]Version 3.0.2 - 2013-11-xx[/B]
+- Added support for Raspberry Pi (enable/disable in settings)
+- Update stream URLs for some channels
+
 [B]Version 3.0.1 - 2013-03-22[/B]
 - Added DR Ultra
 - Removed DR Update
