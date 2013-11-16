@@ -1,6 +1,8 @@
-[B]Version 3.0.2 - 2013-11-xx[/B]
-- Added support for Raspberry Pi (enable/disable in settings)
+[B]Version 3.0.2 - 2013-11-16[/B]
+- Added better support for Raspberry Pi
+  Change Quality to "Raspberry Pi compatible" in addon settings
 - Update stream URLs for some channels
+- Currently most TV2 Region channels doesn't work, I'm investigating...
 
 [B]Version 3.0.1 - 2013-03-22[/B]
 - Added DR Ultra

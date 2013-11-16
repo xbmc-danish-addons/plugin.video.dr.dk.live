@@ -29,20 +29,17 @@ import xbmcplugin
 
 import buggalo
 
-from channels import CHANNELS, CATEGORIES, QUALITIES, CATEGORY_DR, Q_BEST, Q_RASPBERRY_PI
+from channels import CHANNELS, CATEGORIES, QUALITIES, Q_BEST, Q_RASPBERRY_PI
 
 TITLE_OFFSET = 31000
 
 
 class DanishLiveTV(object):
     def showChannels(self, category=None):
-        if ADDON.getSetting('raspberry.pi.compatible.streams') == 'true':
-            quality = Q_RASPBERRY_PI
-        else:
-            try:
-                quality = QUALITIES[int(ADDON.getSetting('quality'))]
-            except ValueError:
-                quality = QUALITIES[Q_BEST]  # fallback for old settings value
+        try:
+            quality = QUALITIES[int(ADDON.getSetting('quality'))]
+        except ValueError:
+            quality = QUALITIES[Q_BEST]  # fallback for old settings value
 
         if category is not None:
             channels = CATEGORIES[category]
@@ -85,13 +82,10 @@ class DanishLiveTV(object):
         xbmcplugin.endOfDirectory(HANDLE)
 
     def playChannel(self, id):
-        if ADDON.getSetting('raspberry.pi.compatible.streams') == 'true':
-            quality = Q_RASPBERRY_PI
-        else:
-            try:
-                quality = QUALITIES[int(ADDON.getSetting('quality'))]
-            except ValueError:
-                quality = QUALITIES[Q_BEST]  # fallback for old settings value
+        try:
+            quality = QUALITIES[int(ADDON.getSetting('quality'))]
+        except ValueError:
+            quality = QUALITIES[Q_BEST]  # fallback for old settings value
 
         for channel in CHANNELS:
             if str(channel.category_id) == id:
@@ -160,9 +154,12 @@ if __name__ == '__main__':
     buggalo.SUBMIT_URL = 'http://tommy.winther.nu/exception/submit.php'
     try:
         danishTV = DanishLiveTV()
-        if ADDON.getSetting('raspberry.pi.compatible.streams') == '':
+        if ADDON.getSetting('quality') == '':
             # set default value based on what we are able to detect
-            ADDON.setSetting('raspberry.pi.compatible.streams', danishTV.isRaspberryPi().__str__().lower())
+            if danishTV.isRaspberryPi():
+                ADDON.setSetting('quality', str(Q_RASPBERRY_PI))
+            else:
+                ADDON.setSetting('quality', str(Q_BEST))
 
         if 'playChannel' in PARAMS:
             danishTV.playChannel(PARAMS['playChannel'][0])
