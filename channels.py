@@ -58,8 +58,15 @@ class Channel(object):
             self.urls[Q_RASPBERRY_PI] = raspberryPi
 
     def get_url(self, quality, idx=Q_BEST):
-        if self.urls.has_key(quality):
+        if quality in self.urls:
             urls = self.urls[quality]
+        elif quality == Q_RASPBERRY_PI:
+            if Q_BEST in self.urls:
+                urls = self.urls[Q_BEST]
+            elif Q_HIGH in self.urls:
+                urls = self.urls[Q_HIGH]
+            else:
+                return None
         elif quality == Q_BEST and Q_HIGH in self.urls:
             urls = self.urls[Q_HIGH]
         else:
@@ -101,7 +108,7 @@ Channel(1, CATEGORY_DR, "dr1.stream").add_urls(
             'rtmp://livetv.gss.dr.dk/live/livedr01bstream2 live=1'],
     low=['rtmp://livetv.gss.dr.dk/live/livedr01astream1 live=1',
          'rtmp://livetv.gss.dr.dk/live/livedr01bstream1 live=1'],
-    raspberryPi='http://lm.gss.dr.dk/V/V10H.stream/Playlist.m3u8')
+    raspberryPi='http://dr01-lh.akamaihd.net/i/dr01dr_0@147042/master.m3u8')
 # DR2
 Channel(2, CATEGORY_DR, "dr2.stream").add_urls(
     high=['rtmp://livetv.gss.dr.dk/live/livedr02astream3 live=1',
@@ -110,7 +117,7 @@ Channel(2, CATEGORY_DR, "dr2.stream").add_urls(
             'rtmp://livetv.gss.dr.dk/live/livedr02bstream2 live=1'],
     low=['rtmp://livetv.gss.dr.dk/live/livedr02astream1 live=1',
          'rtmp://livetv.gss.dr.dk/live/livedr02bstream1 live=1'],
-    raspberryPi='http://lm.gss.dr.dk/V/V02H.stream/Playlist.m3u8')
+    raspberryPi='http://dr02-lh.akamaihd.net/i/dr02dr_0@147043/master.m3u8')
 # DR 3
 Channel(6, CATEGORY_DR, "dr3.stream").add_urls(
     best=['rtmp://livetv.gss.dr.dk/live/livedr06astream2 live=1',
@@ -128,7 +135,7 @@ Channel(3, CATEGORY_DR, "drultra.stream").add_urls(
             'rtmp://livetv.gss.dr.dk/live/livedr03bstream2 live=1'],
     low=['rtmp://livetv.gss.dr.dk/live/livedr03astream1 live=1',
          'rtmp://livetv.gss.dr.dk/live/livedr03bstream1 live=1'],
-    raspberryPi='http://lm.gss.dr.dk/V/V03H.stream/Playlist.m3u8')
+    raspberryPi='http://dr03-lh.akamaihd.net/i/dr03dr_0@147044/master.m3u8')
 # DR K
 Channel(4, CATEGORY_DR, "drk.stream").add_urls(
     high=['rtmp://livetv.gss.dr.dk/live/livedr04astream3 live=1',
