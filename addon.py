@@ -31,7 +31,7 @@ import buggalo
 
 from channels import CHANNELS, CATEGORIES, QUALITIES, Q_BEST, Q_RASPBERRY_PI
 
-TITLE_OFFSET = 31000
+TITLE_OFFSET = 30500
 
 
 class DanishLiveTV(object):
@@ -124,12 +124,12 @@ class DanishLiveTV(object):
             imInDenmark = False
 
         if not imInDenmark:
-            heading = ADDON.getLocalizedString(39970)
-            line1 = ADDON.getLocalizedString(39971)
-            line2 = ADDON.getLocalizedString(39972)
-            line3 = ADDON.getLocalizedString(39973)
-            nolabel = ADDON.getLocalizedString(39974)
-            yeslabel = ADDON.getLocalizedString(39975)
+            heading = ADDON.getLocalizedString(30970)
+            line1 = ADDON.getLocalizedString(30971)
+            line2 = ADDON.getLocalizedString(30972)
+            line3 = ADDON.getLocalizedString(30973)
+            nolabel = ADDON.getLocalizedString(30974)
+            yeslabel = ADDON.getLocalizedString(30975)
             if xbmcgui.Dialog().yesno(heading, line1, line2, line3, nolabel, yeslabel):
                 ADDON.setSetting('warn.if.not.in.denmark', 'false')
 
