@@ -1,3 +1,6 @@
+[B]Version 3.0.5 - 2014-03-10[/B]
+- Fixed missing text in settings
+
 [B]Version 3.0.4 - 2014-03-02[/B]
 - Updated Raspberry Pi to use new Akamai HD streams
 
